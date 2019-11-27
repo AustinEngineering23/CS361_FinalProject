@@ -2,22 +2,30 @@
 <head>
 <link rel="stylesheet" href="styles.css">
 <script>
+var click = 0;
+
 function sendAlarm() {
-  document.getElementById("test").innerHTML = "button was pressed";
+  if (click == 0)
+  {
+    document.getElementById("button").style.background = "red";
+    click = 1;
+  }
+
+  else
+  {
+    document.getElementById("button").style.background = "green";
+    click = 0;
+  }
 }
+
 </script>
 </head>
 <body>
 
 <h2>Trust DISSENT</h2>
-<p id="test">This is a paragraph.</p>
 
 <div id="buttonParent">
-<form>
-<button type="submit" onclick="sendAlarm()">Panic</button>
-</form>
+<button id="button" type="submit" onmousedown="sendAlarm()">Panic</button>
 </div>
-
-
 
 </body>
