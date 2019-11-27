@@ -7,17 +7,16 @@ var click = 0;
 function sendAlarm() {
   if (click == 0)
   {
-    document.getElementById("button").style.background = "red";
+    document.getElementById("button").style.background = "yellow";
     click = 1;
   }
 
-  else
+  else if (click == 1)
   {
-    document.getElementById("button").style.background = "green";
-    click = 0;
+    document.getElementById("button").style.background = "red";
+    click = 2;
   }
 }
-
 </script>
 </head>
 <body>
@@ -29,3 +28,4 @@ function sendAlarm() {
 </div>
 
 </body>
+</html>
