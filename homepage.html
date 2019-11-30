@@ -2,30 +2,45 @@
 <head>
 <link rel="stylesheet" href="styles.css">
 <script>
-var click = 0;
 
-function sendAlarm() {
-  if (click == 0)
-  {
-    document.getElementById("button").style.background = "yellow";
-    click = 1;
-  }
+// variable to stop red alert being sent without 3 second hold
+var timeOut;
 
-  else if (click == 1)
-  {
-    document.getElementById("button").style.background = "red";
-    click = 2;
-  }
+// stops red alert from being sent unless mouse held for 3 seconds
+function clearAlarm()
+{
+  clearTimeout(timeOut);
 }
+
+// sends alarm to "campus security" after panic button clicked
+function sendAlarm() {
+ 
+  // 2 seconds after mousedown change button to yellow 
+  timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
+    {
+       document.getElementById("button").style.background = "yellow";
+       document.getElementById("statusMessage").innerHTML = "ALERT SENT";
+    }, 2000);
+
+  // 3 seconds after mousedown change button to red
+  timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
+    {
+      document.getElementById("button").style.background = "red";
+      document.getElementById("statusMessage").innerHTML = "ALERT SENT";
+    }, 3000);
+}
+
 </script>
 </head>
 <body>
 
-<h2>Trust DISSENT</h2>
-
+<h1>Trust DISSENT</h1>
+<!--Currently changes to yellow 2 seconds after click but will not change to red unless 3 second hold-->
 <div id="buttonParent">
-<button id="button" type="submit" onmousedown="sendAlarm()">Panic</button>
+<button id="button" type="submit" onmousedown="sendAlarm()", onmouseup="clearAlarm()"><strong>Panic</strong></button>
 </div>
 
+<!--Notify user an alert has been sent-->
+<h2 id="statusMessage"></h2>
 </body>
 </html>

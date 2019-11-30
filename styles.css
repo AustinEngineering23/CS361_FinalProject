@@ -1,5 +1,6 @@
 button {
-background-color: red;
+background-color:green;
+font-family: "Courier New", monospace;
 text-align: center;
 font-size: 22px;
 border-radius: 50%;
@@ -7,5 +8,23 @@ height: 100px;
 width: 100px;
 }
 
+h1 {
+    font-family: "Courier New", monospace;
+    background-color:#787878;
+    padding: 20px;
+    text-align: center;
+}
+
+
+h2 {
+    font-family: "Courier New", monospace;
+    text-align: center;
+}
+
 #buttonParent {
+    text-align: center;
+}
+
+body {
+    background-color: #ADD8E6;
 }
