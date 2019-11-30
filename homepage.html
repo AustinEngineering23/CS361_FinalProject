@@ -2,31 +2,43 @@
 <head>
 <link rel="stylesheet" href="styles.css">
 <script>
-
 // variable to stop red alert being sent without 3 second hold
 var timeOut;
-
 // stops red alert from being sent unless mouse held for 3 seconds
 function clearAlarm()
 {
-  clearTimeout(timeOut);
+ clearTimeout(timeOut);
+ setTimeout(sendMessage,2001); //ensures two messages aren't sent
+
+}
+
+//This function will wait to send a red or a yellow message, to ensure the correct message is sent
+function sendMessage() {
+if (document.getElementById("button").style.background == "yellow")
+  {
+       document.getElementById("statusMessage").innerHTML = "Yellow Alarm Sent";
+  }
+  else
+  {
+       document.getElementById("statusMessage").innerHTML = "Red Alarm Sent";
+  }
+
 }
 
 // sends alarm to "campus security" after panic button clicked
 function sendAlarm() {
- 
-  // 2 seconds after mousedown change button to yellow 
+
+  // 2 seconds after mousedown change button to yellow
   timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
     {
        document.getElementById("button").style.background = "yellow";
-       document.getElementById("statusMessage").innerHTML = "ALERT SENT";
+  //     document.getElementById("statusMessage").innerHTML = "ALERT SENT";
     }, 2000);
-
   // 3 seconds after mousedown change button to red
   timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
     {
       document.getElementById("button").style.background = "red";
-      document.getElementById("statusMessage").innerHTML = "ALERT SENT";
+   //   document.getElementById("statusMessage").innerHTML = "ALERT SENT";
     }, 3000);
 }
 
