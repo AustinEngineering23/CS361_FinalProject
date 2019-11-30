@@ -32,13 +32,11 @@ function sendAlarm() {
   timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
     {
        document.getElementById("button").style.background = "yellow";
-  //     document.getElementById("statusMessage").innerHTML = "ALERT SENT";
     }, 2000);
   // 3 seconds after mousedown change button to red
   timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
     {
       document.getElementById("button").style.background = "red";
-   //   document.getElementById("statusMessage").innerHTML = "ALERT SENT";
     }, 3000);
 }
 
