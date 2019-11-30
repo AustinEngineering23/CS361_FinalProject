@@ -4,40 +4,64 @@
 <script>
 // variable to stop red alert being sent without 3 second hold
 var timeOut;
+var timer;
 // stops red alert from being sent unless mouse held for 3 seconds
-function clearAlarm()
+function buttonUp()
 {
- clearTimeout(timeOut);
- setTimeout(sendMessage,2001); //ensures two messages aren't sent
 
+ clearTimeout(timer); //gets rid of timer
+ 
+ 
+ //If the button is held from 2 to 3 seconds, send a yellow. If more than 3 send a red. If less than 2 keep it green.
+ if ((new Date().getTime() - timeOut > 2000) && (new Date().getTime() - timeOut < 3000))
+	yellowButton();
+ else if (new Date().getTime() - timeOut > 3000)
+	redButton();
+ else
+	greenButton();
 }
 
-//This function will wait to send a red or a yellow message, to ensure the correct message is sent
-function sendMessage() {
-if (document.getElementById("button").style.background == "yellow")
-  {
-       document.getElementById("statusMessage").innerHTML = "Yellow Alarm Sent";
-  }
-  else
-  {
-       document.getElementById("statusMessage").innerHTML = "Red Alarm Sent";
-  }
+//This function will change the button yellow and update the message
+function yellowButton() {
+	document.getElementById("button").style.background = "yellow";
+    document.getElementById("statusMessage").innerHTML = "Yellow Alarm Sent";
+}
 
+//This function will change the button red and update the message
+function redButton() {
+	document.getElementById("button").style.background = "red";
+    document.getElementById("statusMessage").innerHTML = "Red Alarm Sent";
+}
+
+//This function will keep the button green and update the message
+function greenButton() {
+	document.getElementById("statusMessage").innerHTML = "No Alarm Sent, button released";
 }
 
 // sends alarm to "campus security" after panic button clicked
-function sendAlarm() {
+function buttonDown() {
+
+  //These setTimeout functions are only used while the button is still being held
 
   // 2 seconds after mousedown change button to yellow
-  timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
+  timer = document.getElementById("button").onmousedown = setTimeout(function ()
     {
-       document.getElementById("button").style.background = "yellow";
+		//Only changes the button yellow if it wasn't released yet.
+		if (document.getElementById("statusMessage").innerHTML == "")
+			document.getElementById("button").style.background = "yellow";
+		
     }, 2000);
   // 3 seconds after mousedown change button to red
-  timeOut = document.getElementById("button").onmousedown = setTimeout(function ()
+  timer = document.getElementById("button").onmousedown = setTimeout(function ()
     {
       document.getElementById("button").style.background = "red";
     }, 3000);
+
+
+	//This timer is used for the logic to update the status message after the button is released
+	var timeStart = new Date();
+	timeOut = timeStart.getTime();
+
 }
 
 </script>
@@ -47,7 +71,7 @@ function sendAlarm() {
 <h1>Trust DISSENT</h1>
 <!--Currently changes to yellow 2 seconds after click but will not change to red unless 3 second hold-->
 <div id="buttonParent">
-<button id="button" type="submit" onmousedown="sendAlarm()", onmouseup="clearAlarm()"><strong>Panic</strong></button>
+<button id="button" type="submit" onmousedown="buttonDown()", onmouseup="buttonUp()"><strong>Panic</strong></button>
 </div>
 
 <!--Notify user an alert has been sent-->
