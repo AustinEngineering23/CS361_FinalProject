@@ -1,0 +1,78 @@
+#dissent-btn {
+background-color:green;
+font-family: "Courier New", monospace;
+text-align: center;
+font-size: 22px;
+border-radius: 50%;
+height: 100px;
+width: 100px;
+}
+
+h1 {
+    font-family: "Courier New", monospace;
+    background-color:#787878;
+    padding: 20px;
+    text-align: center;
+}
+
+
+h2 {
+    font-family: "Courier New", monospace;
+    text-align: center;
+}
+
+#buttonParent {
+    text-align: center;
+}
+
+body {
+    background-color: #ADD8E6;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#login-btn {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#signup-btn {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div.login, div.signup {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+}
