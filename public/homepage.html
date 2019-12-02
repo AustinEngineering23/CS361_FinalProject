@@ -1,80 +1,86 @@
 <html>
-<head>
-<link rel="stylesheet" href="styles.css">
-<script>
-// variable to stop red alert being sent without 3 second hold
-var timeOut;
-var timer;
-// stops red alert from being sent unless mouse held for 3 seconds
-function buttonUp()
-{
+  <head>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+  // variable to stop red alert being sent without 3 second hold
+  var timeOut;
+  var timer;
+  // stops red alert from being sent unless mouse held for 3 seconds
+  function buttonUp()
+  {
 
- clearTimeout(timer); //gets rid of timer
- 
- 
- //If the dissent-btn is held from 2 to 3 seconds, send a yellow. If more than 3 send a red. If less than 2 keep it green.
- if ((new Date().getTime() - timeOut > 2000) && (new Date().getTime() - timeOut < 3000))
-	yellowButton();
- else if (new Date().getTime() - timeOut > 3000)
-	redButton();
- else
-	greenButton();
-}
+  clearTimeout(timer); //gets rid of timer
+  
+  
+  //If the dissent-btn is held from 2 to 3 seconds, send a yellow. If more than 3 send a red. If less than 2 keep it green.
+  if ((new Date().getTime() - timeOut > 2000) && (new Date().getTime() - timeOut < 3000))
+    yellowButton();
+  else if (new Date().getTime() - timeOut > 3000)
+    redButton();
+  else
+    greenButton();
+  }
 
-//This function will change the dissent-btn yellow and update the message
-function yellowButton() {
-	document.getElementById("dissent-btn").style.background = "yellow";
-    document.getElementById("statusMessage").innerHTML = "Yellow Alarm Sent";
-}
+  //This function will change the dissent-btn yellow and update the message
+  function yellowButton() {
+    document.getElementById("dissent-btn").style.background = "yellow";
+      document.getElementById("statusMessage").innerHTML = "Yellow Alarm Sent";
+  }
 
-//This function will change the dissent-btn red and update the message
-function redButton() {
-	document.getElementById("dissent-btn").style.background = "red";
-    document.getElementById("statusMessage").innerHTML = "Red Alarm Sent";
-}
+  //This function will change the dissent-btn red and update the message
+  function redButton() {
+    document.getElementById("dissent-btn").style.background = "red";
+      document.getElementById("statusMessage").innerHTML = "Red Alarm Sent";
+  }
 
-//This function will keep the dissent-btn green and update the message
-function greenButton() {
-	document.getElementById("statusMessage").innerHTML = "No Alarm Sent, dissent-btn released";
-}
+  //This function will keep the dissent-btn green and update the message
+  function greenButton() {
+    document.getElementById("statusMessage").innerHTML = "No Alarm Sent, dissent-btn released";
+  }
 
-// sends alarm to "campus security" after panic dissent-btn clicked
-function buttonDown() {
+  // sends alarm to "campus security" after panic dissent-btn clicked
+  function buttonDown() {
 
-  //These setTimeout functions are only used while the dissent-btn is still being held
+    //These setTimeout functions are only used while the dissent-btn is still being held
 
-  // 2 seconds after mousedown change dissent-btn to yellow
-  timer = document.getElementById("dissent-btn").onmousedown = setTimeout(function ()
-    {
-		//Only changes the dissent-btn yellow if it wasn't released yet.
-		if (document.getElementById("statusMessage").innerHTML == "")
-			document.getElementById("dissent-btn").style.background = "yellow";
-		
-    }, 2000);
-  // 3 seconds after mousedown change dissent-btn to red
-  timer = document.getElementById("dissent-btn").onmousedown = setTimeout(function ()
-    {
-      document.getElementById("dissent-btn").style.background = "red";
-    }, 3000);
+    // 2 seconds after mousedown change dissent-btn to yellow
+    timer = document.getElementById("dissent-btn").onmousedown = setTimeout(function ()
+      {
+      //Only changes the dissent-btn yellow if it wasn't released yet.
+      if (document.getElementById("statusMessage").innerHTML == "")
+        document.getElementById("dissent-btn").style.background = "yellow";
+      
+      }, 2000);
+    // 3 seconds after mousedown change dissent-btn to red
+    timer = document.getElementById("dissent-btn").onmousedown = setTimeout(function ()
+      {
+        document.getElementById("dissent-btn").style.background = "red";
+      }, 3000);
 
 
-	//This timer is used for the logic to update the status message after the dissent-btn is released
-	var timeStart = new Date();
-	timeOut = timeStart.getTime();
+    //This timer is used for the logic to update the status message after the dissent-btn is released
+    var timeStart = new Date();
+    timeOut = timeStart.getTime();
 
-}
+  }
 
 </script>
 </head>
-<body>
+  <body>
 
-<h1>Trust DISSENT</h1>
-<!--Currently changes to yellow 2 seconds after click but will not change to red unless 3 second hold-->
-<div id="buttonParent">
-<button id="dissent-btn" type="submit" onmousedown="buttonDown()", onmouseup="buttonUp()"><strong>Panic</strong></button>
-</div>
+    <h1>Trust DISSENT</h1>
+    <!--Currently changes to yellow 2 seconds after click but will not change to red unless 3 second hold-->
+    <div id="buttonParent">
+      <button id="dissent-btn" type="submit" onmousedown="buttonDown()", onmouseup="buttonUp()"><strong>Panic</strong></button>
+    </div>
 
-<!--Notify user an alert has been sent-->
-<h2 id="statusMessage"></h2>
-</body>
+    <!--Notify user an alert has been sent-->
+    <h2 id="statusMessage"></h2>
+
+    <div class="logout">
+      <form action="/logout">
+          <input type="submit" id="logout-btn" value="Log out" />
+      </form>    
+  </div>
+  </body>
 </html>

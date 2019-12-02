@@ -35,6 +35,9 @@ app.get('/signup', function(req,res,next) {
 app.get('/signup_success', function(req,res,next) {
 	res.sendFile(__dirname + '/public/homepage.html');
 });
+app.get('/logout', function(req,res,next) {
+	res.redirect('/');
+});
 
 // app.use(function(req,res){
 //   res.status(404);
