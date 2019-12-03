@@ -1,0 +1,156 @@
+<html>
+        <link rel="stylesheet" href="styles.css">
+    <script>
+    </script>
+    </head>
+<body>
+
+    <h1>Trust DISSENT</h1>
+    <div class="signup">
+        <h2>REPORT FORM:</h2>
+        <form action="/login">
+            <label for="date">Date and time of assault: (please be as specific as possible) *required to submit form</label>
+            <input type="text" id="date" name="date" placeholder="DD/MM/YYYY -- 00:00am/pm">
+
+	<div class="chckBox">
+		<fieldset>
+  			<legend>Reported Assault * required to submit form</legend>
+			<div>
+				<label>Pick one or more that apply</label>
+			</div>
+  			<div>
+    				<input type="checkbox" id="Rape" name="assultType" value="Rape">
+    				<label for="Rape">Rape</label>
+  			</div>
+  			<div>
+    				<input type="checkbox" id="statuory" name="assultType" value="statutory">
+    				<label for="statuory">Statutory Rape (victim/survivor is under age 18)</label>
+  			</div>
+
+                        <div>   
+                                <input type="checkbox" id="Fondling" name="assultType" value="Fondling">
+                                <label for="Fondling">Fondling (groping)</label>
+                        </div>
+                        <div>   
+                                <input type="checkbox" id="incest" name="assultType" value="incest">
+                               <label for="incest">Incest</label>
+                       </div>
+
+		</fieldset>
+	</div>
+
+
+
+
+        <div class="chckBox">
+                <fieldset>
+                        <legend>Place of Assault * required to submit form</legend>
+                        <div>
+                                <label>Pick one or more that apply</label>
+                        </div>
+                        <div>
+                               <input type="checkbox" id="residence" name="assultPlace" value="residence">
+                                <label for="residence">On Oregon State Residence hall</label>
+                        </div>  
+                        <div>
+                                <input type="checkbox" id="otherCampus" name="assultPlace" value="otherCampus">
+                                <label for="otherCampus">Other building on Oregon States campus</label>
+                        </div>  
+
+                        <div>
+                                <input type="checkbox" id="frat" name="assultPlace" value="frat">
+                                <label for="frat">At a Oregon State Fraternity or Sorority</label>
+                        </div>  
+                        <div>   
+                                <input type="checkbox" id="public" name="assultPlace" value="public">
+                               <label for="public">Public property</label>
+                       </div>  
+
+                        <div>   
+                                <input type="checkbox" id="unknown" name="assultPlace" value="unknow">
+                                <label for="unknown">Unknown</label>
+                        </div>
+
+                        <div>   
+                                 <input type="checkbox" id="other" name="assultPlace" value="other">
+                                 <label for="other">Other</label>
+                        </div>
+                
+                </fieldset>
+        </div>  
+
+
+
+            <label for="offendors">Number of Offender(s)</label>
+            <input type="text" id="offendors" name="offendors" placeholder="0, 1, 2, etc.">
+
+
+        <div class="chckBox">
+                 <fieldset>
+                         <legend>Offender's Relationship to the Victim/Survivor:</legend>
+                         <div>
+                                <label>Pick one or more that apply</label>
+                       </div>
+                        <div>
+                               <input type="checkbox" id="partner" name="relation" value="partner">
+                                <label for="partner">Partner/Spouse</label>
+                        </div>  
+                        <div>
+                                <input type="checkbox" id="expartner" name="relation" value="expartner">
+                                <label for="expartner">Ex/Former-Partner/Spouse</label>
+                        </div>  
+
+                        <div>
+                                <input type="checkbox" id="colleague" name="relation" value="colleague">
+                                <label for="colleague">Colleague/Co-worker</label>
+                        </div>  
+                        <div>   
+                                 <input type="checkbox" id="dating" name="relation" value="dating">
+                               <label for="dating">Dating/Used to Date</label>
+                       </div> 
+
+                        <div>   
+                                <input type="checkbox" id="acquaintance" name="relation" value="acquaintance">
+                                <label for="acquaintance">Acquaintance</label>
+                         </div>
+ 
+                         <div>     
+                                  <input type="checkbox" id="student" name="relation" value="student">
+                                  <label for="student">Fellow Student</label>
+                         </div>
+
+                        <div>       
+                                 <input type="checkbox" id="faculty" name="relation" value="faculty">
+                               <label for="faculty">Faculty/Teaching Assistant</label>
+                       </div>    
+   
+                        <div>     
+                                <input type="checkbox" id="stranger" name="relation" value="stranger">
+                                <label for="stranger">Stranger</label>
+                         </div>
+   
+                         <div>    
+                                  <input type="checkbox" id="other" name="relation" value="other">
+                                  <label for="other">Other</label>
+                         </div>
+
+                 
+                 </fieldset>
+         </div>
+
+
+
+
+            <label for="resources">List resources you have utilized thus far</label>
+            <input type="text" id="resources" name="resources" placeholder="XYZ, ZYX, YZX, etc...">
+
+            <label for="phoneNumber">Provide your phone number if you would like further assitance from the police</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="XXX-XXX-XXXX">
+
+
+            <input type="submit" id="signup-btn" name="submissionform-btn" value="Submit Form">
+        </form>
+    </div>
+</body>
+</html>
+
