@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    <script>
+        var fields = ['id', 'Device Type', 'First Name', 'Last Name', 'Building', 'Floor', 'Room', 'Bed', 'Phone Number'];
+        var sampleData = [
+            {
+                'id': 1,
+                'Device Type': 'Button',
+                'First Name': 'Emre',
+                'Last Name': 'Ercelebi',
+                'Building': 'Bloss',
+                'Floor': 2,
+                'Room': 206,
+                'Bed': 'A',
+                'Phone Number': "555-555-5555"
+            },
+            {
+                'id': 2,
+                'Device Type': 'Mobile Phone',
+                'First Name': 'Emre',
+                'Last Name': 'Ercelebi',
+                'Building': 'Bloss',
+                'Floor': 2,
+                'Room': 206,
+                'Bed': 'A',
+                'Phone Number': "555-555-5555"
+            },
+            {
+                'id': 3,
+                'Device Type': 'Button',
+                'First Name': 'Jane',
+                'Last Name': 'Doe',
+                'Building': 'McNary',
+                'Floor': 5,
+                'Room': 507,
+                'Bed': 'B',
+                'Phone Number': "555-555-5455"
+            },
+            {
+                'id': 4,
+                'Device Type': 'Button',
+                'First Name': 'Dee',
+                'Last Name': 'Reynolds',
+                'Building': 'Bloss',
+                'Floor': 5,
+                'Room': 507,
+                'Bed': 'A',
+                'Phone Number': "555-565-5555"
+            },
+            {
+                'id': 5,
+                'Device Type': 'Button',
+                'First Name': 'Vicky',
+                'Last Name': 'Falsename',
+                'Building': 'Dixon Lodge',
+                'Floor': 6,
+                'Room': 623,
+                'Bed': 'B',
+                'Phone Number': "555-555-5595"
+            },
+        ];
+        window.addEventListener('load', function() {
+            var table = document.getElementById('deviceTable');
+            var tableHeaderRow = document.createElement('tr');
+            for (let i = 0; i < fields.length; i++) {
+                let tableElement = document.createElement('th');
+                tableElement.innerHTML = fields[i];
+                tableHeaderRow.appendChild(tableElement);
+            }
+            table.appendChild(tableHeaderRow);
+            for (let i = 0; i < sampleData.length; i++) {
+                let tableRow = document.createElement('tr');
+                for (let j = 0; j < fields.length; j++) {
+                    let tableElement = document.createElement('td');
+                    tableElement.innerHTML = sampleData[i][fields[j]];
+                    tableRow.appendChild(tableElement);
+                }
+                table.appendChild(tableRow);
+            } 
+        });
+        
+    </script>
+    </head>
+    <body>
+
+        <h1>Trust DISSENT</h1>
+        <h2>Registered Devices</h2>
+        <div class="deviceTableContainer">
+            
+            <table id="deviceTable">
+
+            </table>
+        </div>
+
+    </body>
+</html>

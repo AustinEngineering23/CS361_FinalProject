@@ -38,6 +38,12 @@ app.get('/signup_success', function(req,res,next) {
 app.get('/logout', function(req,res,next) {
 	res.redirect('/');
 });
+app.get('/adminLogin', function(req,res,next) {
+	res.sendFile(__dirname + '/public/adminLogin.html');
+});
+app.get('/deviceView', function(req,res,next){
+	res.sendFile(__dirname + '/public/deviceView.html');
+});
 
 // app.use(function(req,res){
 //   res.status(404);

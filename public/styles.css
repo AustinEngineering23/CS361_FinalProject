@@ -89,8 +89,33 @@ div.report{
 
 }
 
+div.adminLogin{
+
+	position: absolute;
+	left: 50;
+	bottom: 50;
+	margin-bottom: 10px;
+	display: block;
+	text-align: right;
+
+}
+
 
 #reportButton {
+
+	width: 200px;
+	height: 50px;
+	background-color: #4CAF50; 
+	color: white;
+	margin 8px 0;
+	font-size: 22px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+
+}
+
+#adminButton {
 
 	width: 200px;
 	height: 50px;
@@ -113,4 +138,28 @@ label.reportL{
 div.chckBox{
 	padding-top: 25px;
 	padding-bottom: 25px;
+}
+
+div.deviceTableContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#deviceTable {
+    border-collapse: collapse;
+}
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: lightsteelblue;
 }
