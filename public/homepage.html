@@ -2,6 +2,10 @@
   <head>
   <link rel="stylesheet" href="styles.css">
   <script>
+  var username = '@Session["username"]>';
+  window.onload = function() {
+    alert('Welcome, ' + username);
+  }
   // variable to stop red alert being sent without 3 second hold
   var timeOut;
   var timer;
